@@ -1,6 +1,7 @@
 const searchEl = document.querySelector(".search");
 const searchInputEl = searchEl.querySelector("input");
 // document.querySelector(".search input")
+/* 위와같이 연달아 쓸 수 있지만 분할하여 쓰는게 좋다. */
 
 const fcsHandler = () => searchInputEl.focus();
 

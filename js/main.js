@@ -17,4 +17,4 @@ const inputHandler = () => {
 
 searchEl.addEventListener("click", fcsHandler);
 searchInputEl.addEventListener("focus", inputHandler);
-searchInputEl.addEventListener("blur", blurHandler);
+searchInputEl.addEventListener("blur", blurHandler); /** blur == !focus */

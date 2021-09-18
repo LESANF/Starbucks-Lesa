@@ -17,11 +17,26 @@ const inputHandler = () => {
 };
 
 const scrollHandler = () => {
-  console.log("scr");
+  if (window.scrollY > 500) {
+    //배지 숨기기
+    gsap.to(badgeEl, 0.6, {
+      opacity: 0,
+      display: "none",
+    });
+  } else {
+    //배지 보이기
+    gsap.to(badgeEl, 0.6, {
+      opacity: 1,
+      display: "block",
+    });
+  }
 };
 
 searchEl.addEventListener("click", fcsHandler);
 searchInputEl.addEventListener("focus", inputHandler);
 searchInputEl.addEventListener("blur", blurHandler); /** blur == !focus */
 
-window.addEventListener("scroll", scrollHandler);
+window.addEventListener(
+  "scroll",
+  _.throttle(scrollHandler, 300)
+); /* ms, 300 = 3s */

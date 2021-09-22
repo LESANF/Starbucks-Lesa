@@ -3,6 +3,7 @@ const searchInputEl = searchEl.querySelector("input");
 const badgeEl = document.querySelector("header .badges");
 // document.querySelector(".search input")
 /* 위와같이 연달아 쓸 수 있다. */
+const fadeEls = document.querySelectorAll(".visual .fade-in");
 
 const fcsHandler = () => searchInputEl.focus();
 
@@ -40,3 +41,8 @@ window.addEventListener(
   "scroll",
   _.throttle(scrollHandler, 300)
 ); /* ms, 300 = 3s */
+
+const fadeInImg = (ele, idx) =>
+  gsap.to(ele, 1, { delay: (idx + 1) * 0.7, opacity: 1 }); //0.7 -> 1.4 -> 2.1 -> 2.7 (ele = 4, idx = 0, 1, 2, 3)
+
+fadeEls.forEach((ele, idx) => fadeInImg(ele, idx));

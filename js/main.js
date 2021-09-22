@@ -37,13 +37,16 @@ searchEl.addEventListener("click", fcsHandler);
 searchInputEl.addEventListener("focus", inputHandler);
 searchInputEl.addEventListener("blur", blurHandler); /** blur == !focus */
 
-window.addEventListener(
-  "scroll",
-  _.throttle(scrollHandler, 300)
-); /* ms, 300 = 3s */
+window.addEventListener("scroll", _.throttle(scrollHandler, 300)); /* ms, 300 = 3s */
 
 /* main Image 애니메이션 처리 */
-const fadeInImg = (ele, idx) =>
-  gsap.to(ele, 1, { delay: (idx + 1) * 0.7, opacity: 1 }); //0.7 -> 1.4 -> 2.1 -> 2.7 (ele = 4, idx = 0, 1, 2, 3)
+const fadeInImg = (ele, idx) => gsap.to(ele, 1, { delay: (idx + 1) * 0.7, opacity: 1 }); //0.7 -> 1.4 -> 2.1 -> 2.7 (ele = 4, idx = 0, 1, 2, 3)
 
 fadeEls.forEach((ele, idx) => fadeInImg(ele, idx));
+
+// new Swiper(선택자, 옵션)
+new Swiper(".notice-line .swiper", {
+  direction: "vertical",
+  autoplay: true,
+  loop: true,
+});

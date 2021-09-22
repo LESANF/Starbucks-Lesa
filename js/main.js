@@ -42,6 +42,7 @@ window.addEventListener(
   _.throttle(scrollHandler, 300)
 ); /* ms, 300 = 3s */
 
+/* main Image 애니메이션 처리 */
 const fadeInImg = (ele, idx) =>
   gsap.to(ele, 1, { delay: (idx + 1) * 0.7, opacity: 1 }); //0.7 -> 1.4 -> 2.1 -> 2.7 (ele = 4, idx = 0, 1, 2, 3)
 

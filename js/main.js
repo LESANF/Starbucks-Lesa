@@ -45,13 +45,13 @@ const fadeInImg = (ele, idx) => gsap.to(ele, 1, { delay: (idx + 1) * 0.7, opacit
 fadeEls.forEach((ele, idx) => fadeInImg(ele, idx));
 
 // new Swiper(선택자, 옵션)
-new Swiper(".notice-line .swiper-container", {
+const noticeSwiper = new Swiper(".notice-line .swiper-container", {
   direction: "vertical", // 수직 슬라이드
   autoplay: true, // 자동 재생 여부
   loop: true, // 반복 재생 여부
 });
 
-new Swiper(".promotion .swiper-container", {
+const promotionSwiper = new Swiper(".promotion .swiper-container", {
   //direction: "horizontal" - Swiper의 기본값은 수평
   slidesPerView: 3, // 한번에 보여줄 슬라이드 개수
   spaceBetween: 10, //슬라이드 사이 여백

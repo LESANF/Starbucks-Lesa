@@ -454,6 +454,8 @@ header .badges .badge {
   /* 
   일치선택자 처리해야함. 
   promotion요소에 hide가 붙어있는 경우를 의미
+  .promotion .hide 가 되어버리면 .promotion 하위 .hide를 의미하는데
+  우리가 원하고자하는 방식은 promotion, hide를 모두 만족하는 요소를 선택해야함.
 */
   height: 0;
 }

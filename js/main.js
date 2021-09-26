@@ -87,3 +87,20 @@ const toggleClickHandler = () => {
 };
 
 promotionToggleBtn.addEventListener("click", toggleClickHandler);
+
+//범위 랜덤 함수(소수점 2자리까지)
+const random = (min, max) => parseFloat((Math.random() * (max - min) + min).toFixed(2));
+
+const floatingObject = (selector, delay, size) => {
+  gsap.to(selector, random(1.5, 2.5), {
+    y: size,
+    repeat: -1, // 무한반복
+    yoyo: true, // 적용된 애메이션 반대로
+    ease: Power1.easeInOut,
+    delay: random(0, delay),
+  });
+};
+
+floatingObject(".floating1", 1, 15);
+floatingObject(".floating2", 0.5, 15);
+floatingObject(".floating3", 1.5, 20);

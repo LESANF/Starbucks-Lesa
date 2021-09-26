@@ -1,6 +1,6 @@
 // Youtube IFrame API를 비동기로 로드합니다.
 var tag = document.createElement("script");
-tag.src = "https://www.youtube.com/iframe_api";
+tag.src = `https://www.youtube.com/iframe_api`;
 var firstScriptTag = document.getElementsByTagName("script")[0];
 firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 
@@ -16,6 +16,7 @@ function onYouTubePlayerAPIReady() {
       autoplay: true, // 자동 재생 유무
       loop: true, // 반복 재생 유무
       playlist: "An6LvWQuj_8", // 반복 재생할 유튜브 영상 ID 목록
+      origin: "http://127.0.0.1:5501",
     },
     events: {
       // 영상이 준비되었을 때,

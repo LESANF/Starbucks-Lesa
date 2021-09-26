@@ -88,7 +88,7 @@ const toggleClickHandler = () => {
 
 promotionToggleBtn.addEventListener("click", toggleClickHandler);
 
-//범위 랜덤 함수(소수점 2자리까지)
+//범위 랜덤 함수(소수점 2자리까지: x.xx)
 const random = (min, max) => parseFloat((Math.random() * (max - min) + min).toFixed(2));
 
 const floatingObject = (selector, delay, size) => {

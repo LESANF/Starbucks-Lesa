@@ -1,7 +1,7 @@
 // Youtube IFrame API를 비동기로 로드합니다.
-var tag = document.createElement("script");
+var tag = document.createElement('script');
 tag.src = `https://www.youtube.com/iframe_api`;
-var firstScriptTag = document.getElementsByTagName("script")[0];
+var firstScriptTag = document.getElementsByTagName('script')[0];
 firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 
 // onYouTubePlayerAPIReady 함수 이름은,
@@ -10,13 +10,13 @@ firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 // 그리고 함수는 전역(Global) 등록해야 합니다!
 function onYouTubePlayerAPIReady() {
   // <div id="player"></div>
-  new YT.Player("player", {
-    videoId: "An6LvWQuj_8", // 최초 재생할 유튜브 영상 ID
+  new YT.Player('player', {
+    videoId: 'An6LvWQuj_8', // 최초 재생할 유튜브 영상 ID
     playerVars: {
       autoplay: true, // 자동 재생 유무
       loop: true, // 반복 재생 유무
-      playlist: "An6LvWQuj_8", // 반복 재생할 유튜브 영상 ID 목록
-      origin: "http://127.0.0.1:5501",
+      playlist: 'An6LvWQuj_8', // 반복 재생할 유튜브 영상 ID 목록
+      origin: 'http://127.0.0.1:5501',
     },
     events: {
       // 영상이 준비되었을 때,
@@ -26,3 +26,19 @@ function onYouTubePlayerAPIReady() {
     },
   });
 }
+
+/*
+
+onReady: function (event) {
+
+event.target.loadPlaylist(['An6LvWQuj_8'])
+
+event.target.setLoop(true)
+
+event.target.playVideo()
+
+event.target.mute()
+
+}
+
+*/

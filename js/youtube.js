@@ -12,11 +12,20 @@ function onYouTubePlayerAPIReady() {
   // <div id="player"></div>
   new YT.Player('player', {
     videoId: 'An6LvWQuj_8', // 최초 재생할 유튜브 영상 ID
-    playerVars: {
-      autoplay: true, // 자동 재생 유무
-      loop: true, // 반복 재생 유무
-      playlist: 'An6LvWQuj_8', // 반복 재생할 유튜브 영상 ID 목록
-      origin: 'http://127.0.0.1:5501',
+    // playerVars: {
+    //   autoplay: true, // 자동 재생 유무
+    //   loop: true, // 반복 재생 유무
+    //   playlist: 'An6LvWQuj_8', // 반복 재생할 유튜브 영상 ID 목록
+    //   origin: 'http://127.0.0.1:5501',
+    // },
+    onReady: function (event) {
+      event.target.loadPlaylist(['An6LvWQuj_8']);
+
+      event.target.setLoop(true);
+
+      event.target.playVideo();
+
+      event.target.mute();
     },
     events: {
       // 영상이 준비되었을 때,

@@ -70,6 +70,17 @@ const promotionSwiper = new Swiper('.promotion .swiper-container', {
   },
 });
 
+const awardsSwiper = new Swiper('.awards .swiper-container', {
+  autoplay: true,
+  loop: true,
+  spaceBetween: 30,
+  slidesPerView: 5, //하나의 화면에 몇개의 슬라이드들이 보일것인지를 명시
+  navigation: {
+    prevEl: '.awards .swiper-prev',
+    nextEl: '.awards .swiper-next',
+  },
+});
+
 const promotionEl = document.querySelector('.promotion');
 const promotionToggleBtn = document.querySelector('.toggle-promotion');
 let isHidePromotion = false;

@@ -3,6 +3,7 @@ const searchInputEl = searchEl.querySelector('input');
 const badgeEl = document.querySelector('header .badges');
 // document.querySelector(".search input")
 /* 위와같이 연달아 쓸 수 있다. */
+const toTopEl = document.querySelector('#to-top');
 const fadeEls = document.querySelectorAll('.visual .fade-in');
 
 const fcsHandler = () => searchInputEl.focus();
@@ -24,14 +25,32 @@ const scrollHandler = () => {
       opacity: 0,
       display: 'none',
     });
+
+    //버튼 보이기
+    gsap.to(toTopEl, 0.2, {
+      x: 0,
+    });
   } else {
     //배지 보이기
     gsap.to(badgeEl, 0.6, {
       opacity: 1,
       display: 'block',
     });
+
+    //버튼 숨기기
+    gsap.to(toTopEl, 0.2, {
+      x: 100,
+    });
   }
 };
+
+const toTopHandler = () => {
+  gsap.to(window, 0.7, {
+    scrollTo: 0,
+  });
+};
+
+toTopEl.addEventListener('click', toTopHandler);
 
 searchEl.addEventListener('click', fcsHandler);
 searchInputEl.addEventListener('focus', inputHandler);
